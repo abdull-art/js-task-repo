@@ -314,20 +314,19 @@ const sortArray = (array) => {
  --> Higher order functions are those who take function as an argument and returns back an array
  --> Sometimes they work on the basis of conditions or conditional operators too, to output the result ✅✅
 */
-const array = [1, 2, 3, 4].map(index => index >= 2)
+const array = [1, 2, 3, 4].map((index) => index >= 2);
 // console.log(array);
 
-const anotherArray = [3, 5, 6, 7].filter(index => index > 3 && index < 6)
+const anotherArray = [3, 5, 6, 7].filter((index) => index > 3 && index < 6);
 // console.log(anotherArray);
-
 
 // 🎮🕹 --> BUILDING A RANDOM NUMBER GUESS GAME <--
 const guessNumber = () => {
-  let userInput = prompt("Enter a number between 1 - 5")
-  let guessedNumber = Math.round(Math.random() * 5)
-  alert('The number was ' + guessedNumber)
+  let userInput = prompt("Enter a number between 1 - 5");
+  let guessedNumber = Math.round(Math.random() * 5);
+  alert("The number was " + guessedNumber);
   if (userInput == guessedNumber) {
-    return alert("You guess the right number")
-  } else return alert("try again")
-}
-guessNumber()
+    return alert("You guess the right number");
+  } else return alert("try again");
+};
+guessNumber();
