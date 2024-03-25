@@ -329,4 +329,21 @@ const guessNumber = () => {
     return alert("You guess the right number");
   } else return alert("try again");
 };
-guessNumber();
+// guessNumber();
+
+// ✅ JavaScript program to swap pairs of adjacent digits of a given integer of even length. ✅
+const swappingPairs = (array) => {
+  let numi = 0;
+  let numj = 0;
+  for (let i = numi; i < array.length; i++) {
+    for (let j = numj + 1; j == i + 1; j++) {
+      let temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+      numi = j + 2;
+      numj = numj + 2;
+    }
+  }
+  return array;
+};
+console.log(swappingPairs([1, 2, 3, 4]));
