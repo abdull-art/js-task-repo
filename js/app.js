@@ -359,4 +359,12 @@ const swappingAdjacentPairsInArray = (array) => {
 
 const newString = (string) => {
 
+};
+let name1 = "abdul"
+let result1 = name1.split('')
+for(let i=result1.length-1; i<result1.length; i--){
+  console.log(result1[i]);
+// for (let j = result1.length - 1; j < array.length; j++) {
+//   console.log(result1[j]);
+// }
 }
