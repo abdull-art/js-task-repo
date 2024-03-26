@@ -128,8 +128,9 @@ const mySelf = (name, bornedYear, assets, liabilities) => {
       return this.assets - this.liabilities;
     },
   };
-  return `Hi, my name is ${me.name
-    } and my age is ${me.age()} and my net worth is ${me.netWorth()} Pkr`;
+  return `Hi, my name is ${
+    me.name
+  } and my age is ${me.age()} and my net worth is ${me.netWorth()} Pkr`;
 };
 // console.log(mySelf('Abdul', 1987, 50000, 5000));
 
@@ -166,10 +167,13 @@ const myTipCalc = (
       return tipPercentage;
     },
   };
-  return `Hi, my name is ${obj.name
-    } and my age is ${obj.age()} and by profession I'm a ${obj.profession
-    } and my net worth is ${obj.netWorth()} and I went to a restaurant named ${obj.restaurant
-    } and I tipped there, and the tip I give is almost ${obj.tip()}%`;
+  return `Hi, my name is ${
+    obj.name
+  } and my age is ${obj.age()} and by profession I'm a ${
+    obj.profession
+  } and my net worth is ${obj.netWorth()} and I went to a restaurant named ${
+    obj.restaurant
+  } and I tipped there, and the tip I give is almost ${obj.tip()}%`;
 };
 
 // console.log(myTipCalc('Abdul Moiz', 2000, 'Web Developer', 50000, 7000, 'Red Onion', 200, 100));
@@ -332,18 +336,21 @@ const guessNumber = () => {
 // guessNumber();
 
 // ✅ JavaScript program to swap pairs of adjacent digits of a given integer of even length. ✅
-const swappingPairs = (array) => {
-  let numi = 0;
-  let numj = 0;
-  for (let i = numi; i < array.length; i++) {
-    for (let j = numj + 1; j == i + 1; j++) {
-      let temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
-      numi = j + 2;
-      numj = numj + 2;
+
+const swappingAdjacentPairsInArray = (array) => {
+  let countI = 0;
+  let countJ = 1;
+  if (array.length % 2 == 0) {
+    for (let i = countI; i < array.length; i++) {
+      for (let j = countJ; j == i + 1; j++) {
+        let temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+        countI = countJ + 1;
+        countJ = countI + 1;
+      }
     }
+    return array;
   }
-  return array;
 };
-console.log(swappingPairs([1, 2, 3, 4]));
+console.log(swappingAdjacentPairsInArray([1, 2, 3, 4, 5, 6]));
