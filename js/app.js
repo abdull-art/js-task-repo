@@ -354,3 +354,9 @@ const swappingAdjacentPairsInArray = (array) => {
   }
 };
 // console.log(swappingAdjacentPairsInArray([1, 2, 3, 4, 5, 6]));
+
+// ✅ JavaScript program to create a new string from a given string by changing the position of the first and last characters.The string length must be broader than or equal to 1 ✅
+
+const newString = (string) => {
+
+}
