@@ -353,4 +353,4 @@ const swappingAdjacentPairsInArray = (array) => {
     return array;
   }
 };
-console.log(swappingAdjacentPairsInArray([1, 2, 3, 4, 5, 6]));
+// console.log(swappingAdjacentPairsInArray([1, 2, 3, 4, 5, 6]));
