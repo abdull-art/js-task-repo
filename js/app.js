@@ -128,9 +128,8 @@ const mySelf = (name, bornedYear, assets, liabilities) => {
       return this.assets - this.liabilities;
     },
   };
-  return `Hi, my name is ${
-    me.name
-  } and my age is ${me.age()} and my net worth is ${me.netWorth()} Pkr`;
+  return `Hi, my name is ${me.name
+    } and my age is ${me.age()} and my net worth is ${me.netWorth()} Pkr`;
 };
 // console.log(mySelf('Abdul', 1987, 50000, 5000));
 
@@ -167,13 +166,10 @@ const myTipCalc = (
       return tipPercentage;
     },
   };
-  return `Hi, my name is ${
-    obj.name
-  } and my age is ${obj.age()} and by profession I'm a ${
-    obj.profession
-  } and my net worth is ${obj.netWorth()} and I went to a restaurant named ${
-    obj.restaurant
-  } and I tipped there, and the tip I give is almost ${obj.tip()}%`;
+  return `Hi, my name is ${obj.name
+    } and my age is ${obj.age()} and by profession I'm a ${obj.profession
+    } and my net worth is ${obj.netWorth()} and I went to a restaurant named ${obj.restaurant
+    } and I tipped there, and the tip I give is almost ${obj.tip()}%`;
 };
 
 // console.log(myTipCalc('Abdul Moiz', 2000, 'Web Developer', 50000, 7000, 'Red Onion', 200, 100));
@@ -357,14 +353,15 @@ const swappingAdjacentPairsInArray = (array) => {
 
 // ✅ JavaScript program to create a new string from a given string by changing the position of the first and last characters.The string length must be broader than or equal to 1 ✅
 
-const newString = (string) => {
-
-};
-let name1 = "abdul"
-let result1 = name1.split('')
-for(let i=result1.length-1; i<result1.length; i--){
-  console.log(result1[i]);
-// for (let j = result1.length - 1; j < array.length; j++) {
-//   console.log(result1[j]);
-// }
+let personName = "abdul";
+console.log(personName);
+let array1 = personName.split("");
+for (let i = 0; i < 1; i++) {
+  for (let j = array1.length - 1; j < array1.length; j++) {
+    let temp = array1[i];
+    array1[i] = array1[j];
+    array1[j] = temp;
+  }
 }
+let finalResult = array1.join("");
+console.log(finalResult);
