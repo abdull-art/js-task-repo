@@ -351,17 +351,37 @@ const swappingAdjacentPairsInArray = (array) => {
 };
 // console.log(swappingAdjacentPairsInArray([1, 2, 3, 4, 5, 6]));
 
-// ✅ JavaScript program to create a new string from a given string by changing the position of the first and last characters.The string length must be broader than or equal to 1 ✅
+// ✅✅ JavaScript program to create a new string from a given string by changing the position of the first and last characters.The string length must be broader than or equal to 1 ✅
 
-let personName = "abdul";
-console.log(personName);
-let array1 = personName.split("");
-for (let i = 0; i < 1; i++) {
-  for (let j = array1.length - 1; j < array1.length; j++) {
-    let temp = array1[i];
-    array1[i] = array1[j];
-    array1[j] = temp;
+let personName = "system";
+if (personName.length <= 1) {
+  console.log(personName);
+} else {
+  let array1 = personName.split("");
+  for (let i = 0; i < 1; i++) {
+    for (let j = array1.length - 1; j < array1.length; j++) {
+      let temp = array1[i];
+      array1[i] = array1[j];
+      array1[j] = temp;
+    }
   }
+  let finalResult = array1.join("");
+  // console.log(finalResult.toLowerCase());
 }
-let finalResult = array1.join("");
-console.log(finalResult);
+
+// ✅✅ JavaScript program to change the capitalization of all letters in a given string ✅
+
+const changingTheCapitalization = (word) => {
+  let splitter = word.split('')
+  for (let index = 0; index < splitter.length; index++) {
+    let lowerCase = splitter[index].toLowerCase()
+    let upperCase = splitter[index].toUpperCase()
+    if (splitter[index] == lowerCase) {
+      splitter = splitter[index].toUpperCase();
+    } else if (splitter[index] == upperCase) {
+      console.log(splitter[index].toLowerCase());
+    }
+  }
+  return splitter
+}
+console.log(changingTheCapitalization('abdul'));
