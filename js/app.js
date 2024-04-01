@@ -386,9 +386,23 @@ const changingTheCapitalization = (word) => {
 
 // ✅✅ Write a JavaScript program to swap two halves of a given array of integers of even length ✅
 const swappingTwoHalvesOfGivenArrayOfEvenLength = (array) => {
-  let firstHalf = array.slice(0, array.length / 2)
-  let secondHalf = array.slice(array.length / 2)
-  console.log(firstHalf);
-  console.log(secondHalf);
+  if (array.length % 2 == 0) {
+    let firstHalf = array.slice(0, array.length / 2)
+    let secondHalf = array.slice(array.length / 2)
+    let finalArr = []
+    // for (let i = 0; i < secondHalf.length; i++) {
+    //   finalArr.push(secondHalf[i])
+    // }
+    // for (let j = 0; j < firstHalf.length; j++) {
+    //   finalArr.push(firstHalf[j])
+    // }
+    for (const element of secondHalf) {
+      finalArr.push(element)
+    }
+    for (const element of firstHalf) {
+      finalArr.push(element)
+    }
+    console.log(finalArr);
+  }
 };
-swappingTwoHalvesOfGivenArrayOfEvenLength([1, 2, 3, 4, 5, 6])
+swappingTwoHalvesOfGivenArrayOfEvenLength([1, 2, 3, 4, 5, 6, 7, 8])
