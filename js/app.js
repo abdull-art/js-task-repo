@@ -332,7 +332,6 @@ const guessNumber = () => {
 // guessNumber();
 
 // ✅ JavaScript program to swap pairs of adjacent digits of a given integer of even length. ✅
-
 const swappingAdjacentPairsInArray = (array) => {
   let countI = 0;
   let countJ = 1;
@@ -352,7 +351,6 @@ const swappingAdjacentPairsInArray = (array) => {
 // console.log(swappingAdjacentPairsInArray([1, 2, 3, 4, 5, 6]));
 
 // ✅✅ JavaScript program to create a new string from a given string by changing the position of the first and last characters.The string length must be broader than or equal to 1 ✅
-
 let personName = "system";
 if (personName.length <= 1) {
   console.log(personName);
@@ -370,18 +368,27 @@ if (personName.length <= 1) {
 }
 
 // ✅✅ JavaScript program to change the capitalization of all letters in a given string ✅
-
 const changingTheCapitalization = (word) => {
-  let splitter = word.split('')
-  for (let index = 0; index < splitter.length; index++) {
-    let lowerCase = splitter[index].toLowerCase()
-    let upperCase = splitter[index].toUpperCase()
-    if (splitter[index] == lowerCase) {
-      splitter = splitter[index].toUpperCase();
-    } else if (splitter[index] == upperCase) {
-      console.log(splitter[index].toLowerCase());
+  let splitter = word.split("");
+
+  for (let i = 0; i < splitter.length; i++) {
+    let lowerCase = splitter[i].toLowerCase();
+    let upperCase = splitter[i].toUpperCase();
+    if (splitter[i] == lowerCase) {
+      splitter[i] = upperCase;
+    } else if (splitter[i] == upperCase) {
+      splitter[i] = lowerCase;
     }
   }
-  return splitter
-}
-console.log(changingTheCapitalization('abdul'));
+  return splitter.join("");
+};
+// console.log(changingTheCapitalization('ABdul'));
+
+// ✅✅ Write a JavaScript program to swap two halves of a given array of integers of even length ✅
+const swappingTwoHalvesOfGivenArrayOfEvenLength = (array) => {
+  let firstHalf = array.slice(0, array.length / 2)
+  let secondHalf = array.slice(array.length / 2)
+  console.log(firstHalf);
+  console.log(secondHalf);
+};
+swappingTwoHalvesOfGivenArrayOfEvenLength([1, 2, 3, 4, 5, 6])
