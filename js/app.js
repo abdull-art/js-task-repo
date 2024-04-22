@@ -128,9 +128,8 @@ const mySelf = (name, bornedYear, assets, liabilities) => {
       return this.assets - this.liabilities;
     },
   };
-  return `Hi, my name is ${
-    me.name
-  } and my age is ${me.age()} and my net worth is ${me.netWorth()} Pkr`;
+  return `Hi, my name is ${me.name
+    } and my age is ${me.age()} and my net worth is ${me.netWorth()} Pkr`;
 };
 // console.log(mySelf('Abdul', 1987, 50000, 5000));
 
@@ -167,13 +166,10 @@ const myTipCalc = (
       return tipPercentage;
     },
   };
-  return `Hi, my name is ${
-    obj.name
-  } and my age is ${obj.age()} and by profession I'm a ${
-    obj.profession
-  } and my net worth is ${obj.netWorth()} and I went to a restaurant named ${
-    obj.restaurant
-  } and I tipped there, and the tip I give is almost ${obj.tip()}%`;
+  return `Hi, my name is ${obj.name
+    } and my age is ${obj.age()} and by profession I'm a ${obj.profession
+    } and my net worth is ${obj.netWorth()} and I went to a restaurant named ${obj.restaurant
+    } and I tipped there, and the tip I give is almost ${obj.tip()}%`;
 };
 
 // console.log(myTipCalc('Abdul Moiz', 2000, 'Web Developer', 50000, 7000, 'Red Onion', 200, 100));
@@ -413,12 +409,22 @@ const swappingTwoHalvesOfGivenArrayOfEvenLength = (array) => {
     // console.log(finalArr);
   }
 };
-swappingTwoHalvesOfGivenArrayOfEvenLength([1, 2, 3, 4, 5, 6]);
+// swappingTwoHalvesOfGivenArrayOfEvenLength([1, 2, 3, 4, 5, 6]);
 
 // ✅ JavaScript program to compute the sum of all the digits that occur in a given string ✅
 
 const sumOfDigitsInAString = (string) => {
-  let number = Number(string);
-  return number;
+  let sum = 0
+  for (let i = 0; i < string.length; i++) {
+    if (!isNaN(Number(string[i]))) {
+      sum += Number(string[i])
+    }
+  }
+  return sum
 };
-console.log(sumOfDigitsInAString("abdul12"));
+console.log(sumOfDigitsInAString("abdul1997"));
+
+// let a = '3'
+// if (typeof ('a') == 'string') {
+//   console.log('true, it is a string');
+// }
