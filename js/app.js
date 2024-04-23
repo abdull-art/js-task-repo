@@ -433,7 +433,7 @@ const returningTheSumOfCubes = (number) => {
   }
   return resultOfCubes;
 };
-console.log(returningTheSumOfCubes(5));
+// console.log(returningTheSumOfCubes(5));
 
 // ✅ JavaScript program to return double the numbers of an array by using .map function ✅
 
@@ -441,7 +441,7 @@ const doublingNumbers = (array) => {
   const double = array.map((index) => index * 2);
   return double;
 };
-console.log(doublingNumbers([1, 2, 3, 4]));
+// console.log(doublingNumbers([1, 2, 3, 4]));
 
 // ✅ JavaScript program to store strings by their lengths (short comes first) ✅
 
@@ -457,12 +457,12 @@ const storingStringByLength = (arrayOfStrings) => {
   }
   return arrayOfStrings;
 };
-console.log(storingStringByLength(["a", "ab", "abcd", "abc", ""]));
+// console.log(storingStringByLength(["a", "ab", "abcd", "abc", ""]));
 
 
 const addingNumbers = (numbers) => {
   let sum = numbers.reduce((a, b) => a + b)
   return sum
 }
-console.log(addingNumbers([12, 6, 8, 4]));
-console.log(addingNumbers([20, 10, 50]));
+// console.log(addingNumbers([12, 6, 8, 4]));
+// console.log(addingNumbers([20, 10, 50]));
