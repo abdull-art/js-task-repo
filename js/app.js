@@ -414,17 +414,55 @@ const swappingTwoHalvesOfGivenArrayOfEvenLength = (array) => {
 // ✅ JavaScript program to compute the sum of all the digits that occur in a given string ✅
 
 const sumOfDigitsInAString = (string) => {
-  let sum = 0
+  let sum = 0;
   for (let i = 0; i < string.length; i++) {
     if (!isNaN(Number(string[i]))) {
-      sum += Number(string[i])
+      sum += Number(string[i]);
     }
   }
-  return sum
+  return sum;
 };
-console.log(sumOfDigitsInAString("abdul1997"));
+// console.log(sumOfDigitsInAString("abdul1997"));
 
-// let a = '3'
-// if (typeof ('a') == 'string') {
-//   console.log('true, it is a string');
-// }
+// ✅ JavaScript program to compute the sum of cubes of all integers from 1 to a given integer ✅
+
+const returningTheSumOfCubes = (number) => {
+  let resultOfCubes = 0;
+  for (let i = 0; i <= number; i++) {
+    resultOfCubes += i ** 3;
+  }
+  return resultOfCubes;
+};
+console.log(returningTheSumOfCubes(5));
+
+// ✅ JavaScript program to return double the numbers of an array by using .map function ✅
+
+const doublingNumbers = (array) => {
+  const double = array.map((index) => index * 2);
+  return double;
+};
+console.log(doublingNumbers([1, 2, 3, 4]));
+
+// ✅ JavaScript program to store strings by their lengths (short comes first) ✅
+
+const storingStringByLength = (arrayOfStrings) => {
+  for (let i = 0; i < arrayOfStrings.length; i++) {
+    for (let j = i; j < arrayOfStrings.length; j++) {
+      if (arrayOfStrings[i].length > arrayOfStrings[j].length) {
+        let temp = arrayOfStrings[i];
+        arrayOfStrings[i] = arrayOfStrings[j];
+        arrayOfStrings[j] = temp;
+      }
+    }
+  }
+  return arrayOfStrings;
+};
+console.log(storingStringByLength(["a", "ab", "abcd", "abc", ""]));
+
+
+const addingNumbers = (numbers) => {
+  let sum = numbers.reduce((a, b) => a + b)
+  return sum
+}
+console.log(addingNumbers([12, 6, 8, 4]));
+console.log(addingNumbers([20, 10, 50]));
