@@ -447,7 +447,7 @@ const doublingNumbers = (array) => {
 
 const storingStringByLength = (arrayOfStrings) => {
   for (let i = 0; i < arrayOfStrings.length; i++) {
-    for (let j = i; j < arrayOfStrings.length; j++) {
+    for (let j = i + 1; j < arrayOfStrings.length; j++) {
       if (arrayOfStrings[i].length > arrayOfStrings[j].length) {
         let temp = arrayOfStrings[i];
         arrayOfStrings[i] = arrayOfStrings[j];
