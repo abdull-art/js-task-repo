@@ -88,7 +88,7 @@ const factorialCalc = (numb) => {
   return factorial;
 };
 
-// console.log(fact(7))
+// console.log(fact(9));
 
 // 🌟 Arrays 🌟
 
@@ -128,8 +128,9 @@ const mySelf = (name, bornedYear, assets, liabilities) => {
       return this.assets - this.liabilities;
     },
   };
-  return `Hi, my name is ${me.name
-    } and my age is ${me.age()} and my net worth is ${me.netWorth()} Pkr`;
+  return `Hi, my name is ${
+    me.name
+  } and my age is ${me.age()} and my net worth is ${me.netWorth()} Pkr`;
 };
 // console.log(mySelf('Abdul', 1987, 50000, 5000));
 
@@ -166,13 +167,27 @@ const myTipCalc = (
       return tipPercentage;
     },
   };
-  return `Hi, my name is ${obj.name
-    } and my age is ${obj.age()} and by profession I'm a ${obj.profession
-    } and my net worth is ${obj.netWorth()} and I went to a restaurant named ${obj.restaurant
-    } and I tipped there, and the tip I give is almost ${obj.tip()}%`;
+  return `Hi, my name is ${
+    obj.name
+  } and my age is ${obj.age()} and by profession I'm a ${
+    obj.profession
+  } and my net worth is ${obj.netWorth()} and I went to a restaurant named ${
+    obj.restaurant
+  } and I tipped there, and the tip I give is almost ${obj.tip()}%`;
 };
 
-// console.log(myTipCalc('Abdul Moiz', 2000, 'Web Developer', 50000, 7000, 'Red Onion', 200, 100));
+// console.log(
+//   myTipCalc(
+//     "Abdul Moiz",
+//     2000,
+//     "Web Developer",
+//     50000,
+//     7000,
+//     "Red Onion",
+//     200,
+//     100
+//   )
+// );
 
 // ➿ LOOPS ➿
 
@@ -459,10 +474,67 @@ const storingStringByLength = (arrayOfStrings) => {
 };
 // console.log(storingStringByLength(["a", "ab", "abcd", "abc", ""]));
 
+// ✅ JavaScript program to sum up numbers using reduce function ✅
+// ✅ JavaScript program to find identical elements in given arrays ✅
 
-const addingNumbers = (numbers) => {
-  let sum = numbers.reduce((a, b) => a + b)
-  return sum
-}
-// console.log(addingNumbers([12, 6, 8, 4]));
+const addingNumbers = (arr1, arr2) => {
+  // let sum = numbers.reduce((a, b) => a + b)
+  // return sum
+  let result = [];
+  for (let i = 0; i < arr1.length; i++) {
+    for (let j = 0; j < arr2.length; j++) {
+      if (arr1[i] == arr2[j]) {
+        result.push(arr1[i]);
+      }
+    }
+  }
+  return `${result.length} elements are same`;
+};
+// console.log(addingNumbers([1, 2, 3, 4, 9, 7], [5, 2, 4, 1, 9, 7]));
 // console.log(addingNumbers([20, 10, 50]));
+
+// ✅ JavaScript program to check whether all the digits in a given number are the same or not ✅
+const testSameDigit = (number) => {
+  let splitter = number.toString();
+  let firstDigit = splitter[0];
+  for (let i = 0; i < splitter.length; i++) {
+    if (firstDigit !== splitter[i]) {
+      return false;
+    }
+  }
+  return true;
+};
+// console.log(testSameDigit(123));
+
+// ✅ JavaScript program to JavaScript program to remove all characters from a given string that appear more than once ✅
+const removingAdjacentLetters = (string) => {
+  let counter = [];
+  counter.push(string);
+  for (const letter of string) {
+    if (letter in counter) {
+      counter[letter]++;
+    } else {
+      counter[letter] = 1;
+    }
+  }
+  return counter;
+};
+// console.log(removingAdjacentLetters("abcdabc"));
+
+// JS program to pick a random element from an array by using ES6 function
+const randomPick = (array) => {
+  let choice = Math.floor(Math.random() * array.length);
+  return array[choice];
+};
+// console.log(randomPick(["🍍", "🍎", "🍌", "🍊"]));
+
+const isPalindrome = (word) => {
+  let splitter = word.split("");
+  let reverser = splitter.reverse();
+  let joiner = reverser.join("");
+  if (joiner === word) {
+    return `true`;
+  } else return `false`;
+};
+// console.log(isPalindrome("moiz"));
+// console.log(isPalindrome("dad"));
