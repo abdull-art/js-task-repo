@@ -538,3 +538,148 @@ const isPalindrome = (word) => {
 };
 // console.log(isPalindrome("moiz"));
 // console.log(isPalindrome("dad"));
+
+// =====================================================================
+
+/**
+ * -----------------> ASYNCHRONOUS FUNCTIONS <---------------------
+ * Using 'CALLBACK HELL' Method
+ * Using 'PROMISES'
+ * Using 'ASYNC / AWAIT'
+ */
+
+// PROBLEM = Do the following chores:
+
+// Do the homework -> Jogging -> Take pre gym meal -> Gym -> Clean the room
+
+// ========================> Through CALLBACK HELL <=======================
+// const firstChore = (callback) => {
+//   setTimeout(() => {
+//     console.log(`I've done the homework! 📚`);
+//     callback();
+//   }, 8000);
+// };
+
+// const secondChore = (callback) => {
+//   setTimeout(() => {
+//     console.log(`Jogging has been done! 🏃‍♂️`);
+//     callback();
+//   }, 5000);
+// };
+
+// const thirdChore = (callback) => {
+//   setTimeout(() => {
+//     console.log(`Pre meal's taken! 🍴`);
+//     callback();
+//   }, 4000);
+// };
+
+// const fourthChore = (callback) => {
+//   setTimeout(() => {
+//     console.log(`Gym's done! ⛹️‍♀️`);
+//     callback();
+//   }, 10000);
+// };
+
+// const lastChore = (callback) => {
+//   setTimeout(() => {
+//     console.log(`Room has been cleaned! ♻`);
+//     callback();
+//   }, 500);
+// };
+
+// firstChore(() => {
+//   secondChore(() => {
+//     thirdChore(() => {
+//       fourthChore(() => {
+//         lastChore(() => {
+//           console.log("All chores are done!");
+//         });
+//       });
+//     });
+//   });
+// });
+
+// ========================> Through PROMISE OBJECT <=======================
+// const firstChore = () => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const homeworkDone = true;
+//       if (homeworkDone) {
+//         resolve("Homework done, yay!");
+//       } else {
+//         reject("You didn't complete your first task.");
+//       }
+//     }, 5000);
+//   });
+// };
+
+// const secondChore = () => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const jogDone = true;
+//       if (jogDone) {
+//         resolve("Jog done, yay!");
+//       } else {
+//         reject("You didn't complete your second task.");
+//       }
+//     }, 3000);
+//   });
+// };
+
+// firstChore()
+//   .then((value) => {
+//     console.log(value);
+//     return secondChore();
+//   })
+//   .then((value) => {
+//     console.log(value);
+//   })
+//   .catch((error) => {
+//     console.error(error);
+//   });
+
+// ========================> Through Async / Await <=======================
+
+// -> Async = Async makes a func returns a promise
+// -> Await = Await makes an async func waits for a promise to complete
+// -> It makes us to write an asynchronous code into a synchronous manner
+
+const firstChore = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const homeworkDone = true;
+      if (homeworkDone) {
+        resolve("Homework done, yay!");
+      } else {
+        reject("You didn't complete your first task.");
+      }
+    }, 5000);
+  });
+};
+
+const secondChore = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const jogDone = false;
+      if (jogDone) {
+        resolve("Jog done, yay!");
+      } else {
+        reject("You didn't complete your second task.");
+      }
+    }, 3000);
+  });
+};
+
+const doChores = async () => {
+  try {
+    const homeWork = await firstChore();
+    console.log(homeWork);
+
+    const jog = await secondChore();
+    console.log(jog);
+  } catch (error) {
+    console.error(error);
+  }
+};
+doChores();
