@@ -645,41 +645,152 @@ const isPalindrome = (word) => {
 // -> Await = Await makes an async func waits for a promise to complete
 // -> It makes us to write an asynchronous code into a synchronous manner
 
-const firstChore = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const homeworkDone = true;
-      if (homeworkDone) {
-        resolve("Homework done, yay!");
-      } else {
-        reject("You didn't complete your first task.");
-      }
-    }, 5000);
-  });
-};
+// const firstChore = () => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const homeworkDone = true;
+//       if (homeworkDone) {
+//         resolve("Homework done, yay!");
+//       } else {
+//         reject("You didn't complete your first task.");
+//       }
+//     }, 5000);
+//   });
+// };
 
-const secondChore = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const jogDone = false;
-      if (jogDone) {
-        resolve("Jog done, yay!");
-      } else {
-        reject("You didn't complete your second task.");
-      }
-    }, 3000);
-  });
-};
+// const secondChore = () => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const jogDone = false;
+//       if (jogDone) {
+//         resolve("Jog done, yay!");
+//       } else {
+//         reject("You didn't complete your second task.");
+//       }
+//     }, 3000);
+//   });
+// };
 
-const doChores = async () => {
-  try {
-    const homeWork = await firstChore();
-    console.log(homeWork);
+// const doChores = async () => {
+//   try {
+//     const homeWork = await firstChore();
+//     console.log(homeWork);
 
-    const jog = await secondChore();
-    console.log(jog);
-  } catch (error) {
-    console.error(error);
-  }
-};
-doChores();
+//     const jog = await secondChore();
+//     console.log(jog);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
+// doChores();
+
+/**
+ * DAILY ROUTINE
+ * Breakfast -> make bed clean -> tasks -> office
+ */
+
+// const breakfast = (callback) => {
+//   setTimeout(() => {
+//     console.log("I have done my breakfast");
+//     callback();
+//   }, 3000);
+// };
+
+// const cleanBed = (callback) => {
+//   setTimeout(() => {
+//     console.log("I have cleaned my bed");
+//     callback();
+//   }, 2000);
+// };
+
+// const office = (callback) => {
+//   setTimeout(() => {
+//     console.log("I went to office");
+//     callback();
+//   }, 5000);
+// };
+
+// breakfast(() => {
+//   cleanBed(() => {
+//     office(() => {
+//       console.log("All work has been completed!");
+//     });
+//   });
+// });
+
+// ------------------PROMISES---------------
+
+// const breakfast = () => {
+//   return new Promise((resolve, reject) => {
+//     const breakfastDone = true;
+//     if (breakfastDone) {
+//       setTimeout(() => {
+//         resolve("I have done my breakfast");
+//       }, 3000);
+//     } else {
+//       reject("You have not done your breakfast");
+//     }
+//   });
+// };
+
+// const cleanBed = () => {
+//   return new Promise((resolve, reject) => {
+//     const bedDone = true;
+//     if (bedDone) {
+//       setTimeout(() => {
+//         resolve("I have done my bed");
+//       }, 2000);
+//     } else {
+//       reject("You have not done your bed");
+//     }
+//   });
+// };
+
+// const office = () => {
+//   return new Promise((resolve, reject) => {
+//     const officeDone = true;
+//     if (officeDone) {
+//       setTimeout(() => {
+//         resolve("I went to office");
+//       }, 3000);
+//     } else {
+//       reject("You did not go to office");
+//     }
+//   });
+// };
+
+// const doTasks = async () => {
+//   try {
+//     const firstTask = await breakfast();
+//     console.log(firstTask);
+
+//     const secondTask = await cleanBed();
+//     console.log(secondTask);
+
+//     const thirdTask = await office();
+//     console.log(thirdTask);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
+// doTasks();
+
+// breakfast()
+//   .then((message) => {
+//     console.log(message);
+//     return cleanBed();
+//   })
+//   .then((message) => {
+//     console.log(message);
+//     return office();
+//   })
+//   .then((message) => {
+//     console.log(message);
+//   })
+//   .catch((error) => {
+//     console.error(error);
+//   });
+
+/**
+ * PROMISE Exercises
+ */
