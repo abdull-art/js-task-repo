@@ -791,6 +791,130 @@ const isPalindrome = (word) => {
 //     console.error(error);
 //   });
 
+// =========================================================================
+// =========================================================================
+
 /**
  * PROMISE Exercises
  */
+
+// --------------------> Exercise 1 <--------------------
+
+// let promise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     const random = Math.random().toFixed(1);
+//     if (random > 0.5) {
+//       resolve("Hello World");
+//     } else {
+//       reject("Error");
+//     }
+//   }, 2000);
+// });
+
+// const func = async () => {
+//   try {
+//     const task = await promise;
+//     console.log(task);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+// func();
+// promise
+//   .then((response) => {
+//     console.log(response);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
+
+// --------------------> Exercise 2 <--------------------
+
+// Input a number, double it, increase it by 10, and then multiply by 3.
+// Each operation should be in a separate Promise and then chained together.
+let number = 2;
+const double = () => {
+  return new Promise((resolve, reject) => {
+    resolve(number * 2);
+  });
+};
+
+const increase = () => {
+  return new Promise((resolve, reject) => {
+    resolve(number + 10);
+  });
+};
+
+const multiply = () => {
+  return new Promise((resolve, reject) => {
+    resolve(number * 3);
+  });
+};
+
+const numberUpGrader = async () => {
+  try {
+    const numberDouble = await double();
+    console.log(numberDouble);
+    number = numberDouble;
+
+    const increment = await increase();
+    console.log(increment);
+    number = increment;
+
+    const numberMultiply = await multiply();
+    console.log(numberMultiply);
+  } catch (error) {
+    console.error(error);
+  }
+};
+// numberUpGrader();
+
+// double()
+//   .then((value) => {
+//     console.log(value);
+//     number = value;
+//     return increase();
+//   })
+//   .then((value) => {
+//     console.log(value);
+//     number = value;
+//     return multiply();
+//   })
+//   .then((value) => {
+//     console.log(value);
+//   });
+
+// =================================================================
+// =================================================================
+
+// ------------------------> FETCH() <---------------------------------
+// ----------------------> EXERCISES <---------------------------------
+const dataFetch = async () => {
+  try {
+    const fetchData = await fetch(
+      "https://pokeapi.co/api/v2/pokemon/charizard"
+    );
+    if (!fetchData.ok) {
+      throw new Error("You typed something wrong");
+    } else {
+      const data = await fetchData.json();
+      console.log(data.name);
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
+// dataFetch();
+
+const animeApi = new Promise((resolve, reject) => {
+  resolve(fetch("https://pokeapi.co/api/v2/pokemon/charizard"));
+});
+
+const randomApi = new Promise((resolve, reject) => {
+  resolve(fetch("https://randomuser.me/api/"));
+});
+
+Promise.all([animeApi, randomApi]).then((responses) => {
+  responses[0].json().then((data) => console.log(data.name));
+  responses[1].json().then((data) => console.log(data.results[0].name));
+});
